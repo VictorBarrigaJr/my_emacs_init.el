@@ -90,10 +90,13 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
+;; Find File at Point - used to open a directory path 
+(require 'ffap) 
+
 (require 'cl) ;; common list 
 (require 'compile)
 (require 'dired-x)
-(require 'ffap) ;; extentions to library 
+
 
 (require 'recentf)
 (require 'smooth-scrolling)
