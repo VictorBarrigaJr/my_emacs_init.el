@@ -102,6 +102,7 @@
 (require 'smooth-scrolling)
 (require 'uniquify)
 (require 'whitespace)
+(require 'magit)
 
 (ac-config-default) ;; auto-complete global
 (yas-global-mode 1) ;; yasnippet global
