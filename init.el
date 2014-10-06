@@ -95,8 +95,8 @@
 (require 'uniquify)
 (require 'whitespace)
 
-(ac-config-default)
-(yas-global-mode 1)
+(ac-config-default) ;; auto-complete global
+(yas-global-mode 1) ;; yasnippet global
 
 ;; visual settings
 (menu-bar-mode -1) ;; remove menu toolbar from window
