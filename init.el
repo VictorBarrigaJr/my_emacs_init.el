@@ -93,11 +93,11 @@
 ;; Find File at Point - used to open a directory path 
 (require 'ffap) 
 
-(require 'cl) ;; common list 
-(require 'compile)
+;; (Di)rectory (Ed)itor - for file management
 (require 'dired-x)
 
-
+(require 'cl) ;; common list 
+(require 'compile)
 (require 'recentf)
 (require 'smooth-scrolling)
 (require 'uniquify)
