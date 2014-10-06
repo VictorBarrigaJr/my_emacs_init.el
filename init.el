@@ -153,6 +153,9 @@
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
               (ggtags-mode 1))))
 
+(add-hook 'dired-mode-hook 'ggtags-mode)
+
+
 ;; full screen
 (defun fullscreen ()
   (interactive)
