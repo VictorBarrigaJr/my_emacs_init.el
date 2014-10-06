@@ -84,12 +84,17 @@
 ;; occur key binding find all occurances of string
 (global-set-key (kbd "C-c o") 'occur)
 
+;; Interactively Do Things - minibuffer 
+(require 'ido) 
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
 (require 'cl) ;; common list 
 (require 'compile)
 (require 'dired-x)
 (require 'ffap) ;; extentions to library 
-(require 'ido) ;; ido for minibuffer completion
-(ido-mode t)
+
 (require 'recentf)
 (require 'smooth-scrolling)
 (require 'uniquify)
