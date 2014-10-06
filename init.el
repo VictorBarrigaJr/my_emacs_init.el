@@ -68,7 +68,8 @@
       (append
        '(auto-complete auto-complete-c-headers buffer-move color-theme el-get
 	 emacs-goodies-el escreen fill-column-indicator fuzzy flymake gnus 	 
-	 iedit minimap notify package popup smex switch-window yasnippet)))
+	 ggtags iedit minimap notify package popup smex switch-window 
+         yasnippet)))
 
 (el-get 'sync my:el-get-packages)
 
@@ -80,6 +81,8 @@
 (require 'bookmark) ;; sets bookmarks to files and locations to open later
 (bookmark-bmenu-list)
 (switch-to-buffer "*Bookmark List*")
+;; occur key binding find all occurances of string
+(global-set-key (kbd "C-c o") 'occur)
 
 (require 'cl) ;; common list 
 (require 'compile)
@@ -134,9 +137,6 @@
 ;; replace list-buffers with ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;; occur key binding find all occurances of string
-(global-set-key (kbd "C-c o") 'occur)
-
 ;; navigate windows with M-<arros>
 (windmove-default-keybindings 'meta)
 (setq windmove-wrap-around t)
@@ -146,6 +146,12 @@
 
 ;; Ctrl X-Ctrl S button dangerously close to Ctrl X-Ctrl C
 (setq confirm-kill-emacs 'yes-or-no-p)
+
+;; c cc-mode
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+              (ggtags-mode 1))))
 
 ;; full screen
 (defun fullscreen ()
